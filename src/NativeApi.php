@@ -59,9 +59,9 @@ final class NativeApi
     /**
      * Określenie zakresu miejscowości
      */
-    public const SEARCH_CITY_TYPE_ALL  = '000'; //Wszystkie
-    public const SEARCH_CITY_TYPE_MAIN = '001'; //Miejscowości podstawowe
-    public const SEARCH_CITY_TYPE_ADD  = '002'; //Części integralne miejscowości
+    public const SEARCH_CITY_TYPE_ALL  = '000'; // Wszystkie
+    public const SEARCH_CITY_TYPE_MAIN = '001'; // Miejscowości podstawowe
+    public const SEARCH_CITY_TYPE_ADD  = '002'; // Części integralne miejscowości
 
     /**
      * @var \mrcnpdlk\Teryt\NativeApi|null
@@ -134,7 +134,7 @@ final class NativeApi
         $res = $this->oConfig->request('PobierzDateAktualnegoKatNTS');
 
         try {
-            return (new DateTime($res))->format('Y-m-d');
+            return (new \DateTime($res))->format('Y-m-d');
         } catch (\Exception $e) {
             return null;
         }
@@ -153,7 +153,7 @@ final class NativeApi
         $res = $this->oConfig->request('PobierzDateAktualnegoKatSimc');
 
         try {
-            return (new DateTime($res))->format('Y-m-d');
+            return (new \DateTime($res))->format('Y-m-d');
         } catch (\Exception $e) {
             return null;
         }
@@ -172,7 +172,7 @@ final class NativeApi
         $res = $this->oConfig->request('PobierzDateAktualnegoKatTerc');
 
         try {
-            return (new DateTime($res))->format('Y-m-d');
+            return (new \DateTime($res))->format('Y-m-d');
         } catch (\Exception $e) {
             return null;
         }
@@ -191,7 +191,7 @@ final class NativeApi
         $res = $this->oConfig->request('PobierzDateAktualnegoKatUlic');
 
         try {
-            return (new DateTime($res))->format('Y-m-d');
+            return (new \DateTime($res))->format('Y-m-d');
         } catch (\Exception $e) {
             return null;
         }
@@ -228,7 +228,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogNTS(): SplFileObject
+    public function PobierzKatalogNTS(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogNTS');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -247,7 +247,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogSIMC(): SplFileObject
+    public function PobierzKatalogSIMC(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogSIMC');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -266,7 +266,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogSIMCAdr(): SplFileObject
+    public function PobierzKatalogSIMCAdr(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogSIMCAdr');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -285,7 +285,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogSIMCStat(): SplFileObject
+    public function PobierzKatalogSIMCStat(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogSIMCStat');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -304,7 +304,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogTERC(): SplFileObject
+    public function PobierzKatalogTERC(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogTERC');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -323,7 +323,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogTERCAdr(): SplFileObject
+    public function PobierzKatalogTERCAdr(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogTERCAdr');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -342,7 +342,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogULIC(): SplFileObject
+    public function PobierzKatalogULIC(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogULIC');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -361,7 +361,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogULICAdr(): SplFileObject
+    public function PobierzKatalogULICAdr(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogULICAdr');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -380,7 +380,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogULICBezDzielnic(): SplFileObject
+    public function PobierzKatalogULICBezDzielnic(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogULICBezDzielnic');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -399,7 +399,7 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzKatalogWMRODZ(): SplFileObject
+    public function PobierzKatalogWMRODZ(): \SplFileObject
     {
         $res     = $this->oConfig->request('PobierzKatalogWMRODZ');
         $sPath   = sprintf('%s/%s.zip', sys_get_temp_dir(), $res->nazwa_pliku);
@@ -728,9 +728,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianyNTS(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianyNTS(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianyNTS',
             [
@@ -757,9 +757,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianySimcAdresowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianySimcAdresowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianySimcAdresowy',
             [
@@ -786,9 +786,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianySimcStatystyczny(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianySimcStatystyczny(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianySimcStatystyczny',
             [
@@ -815,9 +815,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianySimcUrzedowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianySimcUrzedowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianySimcUrzedowy',
             [
@@ -844,9 +844,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianyTercAdresowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianyTercAdresowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianyTercAdresowy',
             [
@@ -873,9 +873,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianyTercUrzedowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianyTercUrzedowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianyTercUrzedowy',
             [
@@ -902,9 +902,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianyUlicAdresowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianyUlicAdresowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianyUlicAdresowy',
             [
@@ -931,9 +931,9 @@ final class NativeApi
      *
      * @return \SplFileObject
      */
-    public function PobierzZmianyUlicUrzedowy(DateTime $fromDate, DateTime $toDate = null): SplFileObject
+    public function PobierzZmianyUlicUrzedowy(\DateTime $fromDate, \DateTime $toDate = null): \SplFileObject
     {
-        $toDate  = $toDate ?? new DateTime();
+        $toDate  = $toDate ?? new \DateTime();
         $res     = $this->oConfig->request(
             'PobierzZmianyUlicUrzedowy',
             [
