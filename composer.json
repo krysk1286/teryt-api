@@ -27,12 +27,12 @@
     "mrcnpdlk/psr16cache-adapter": "^0"
   },
   "require-dev": {
-    "phpunit/php-code-coverage": "^7",
-    "friendsofphp/php-cs-fixer": "^2",
+    "phpunit/php-code-coverage": "^10",
+    "friendsofphp/php-cs-fixer": "*",
     "phpstan/phpstan": "^0",
     "phpstan/phpstan-phpunit": "^0",
     "jangregor/phpstan-prophecy": "^0",
-    "phpunit/phpunit": "^8",
+    "phpunit/phpunit": "^10",
     "mockery/mockery": "^1",
     "monolog/monolog": "^1.23",
     "phpfastcache/phpfastcache": "^7"
