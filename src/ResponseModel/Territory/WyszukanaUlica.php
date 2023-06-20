@@ -46,7 +46,7 @@ class WyszukanaUlica extends Ulica
      *
      * @throws \mrcnpdlk\Teryt\Exception
      */
-    public function __construct(stdClass $oData = null)
+    public function __construct(\stdClass $oData = null)
     {
         if ($oData) {
             $this->streetIdentity = $oData->Cecha;
@@ -66,7 +66,7 @@ class WyszukanaUlica extends Ulica
 
             try {
                 $this->statusDate = $oData->DataStanu ? (new \DateTime($oData->DataStanu))->format('Y-m-d') : null;
-            } catch (Throwable $e) {
+            } catch (\Throwable $e) {
                 $this->statusDate = null;
             }
         }

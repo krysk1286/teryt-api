@@ -21,8 +21,8 @@ use DOMXPath;
  */
 class WSASoap
 {
-    const WSANS  = 'http://www.w3.org/2005/08/addressing';
-    const WSAPFX = 'wsa';
+    public const WSANS  = 'http://www.w3.org/2005/08/addressing';
+    public const WSAPFX = 'wsa';
     /**
      * @var string|null
      */
@@ -48,13 +48,13 @@ class WSASoap
      */
     private $header    = null;
 
-    public function __construct(DOMDocument $doc)
+    public function __construct(\DOMDocument $doc)
     {
         $this->soapDoc   = $doc;
         $this->envelope  = $doc->documentElement;
         $this->soapNS    = $this->envelope->namespaceURI;
         $this->soapPFX   = $this->envelope->prefix;
-        $this->SOAPXPath = new DOMXPath($doc);
+        $this->SOAPXPath = new \DOMXPath($doc);
         $this->SOAPXPath->registerNamespace('wssoap', $this->soapNS);
         $this->SOAPXPath->registerNamespace('wswsa', static::WSANS);
         $this->envelope->setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:' . self::WSAPFX, static::WSANS);
@@ -75,7 +75,7 @@ class WSASoap
     /**
      * @return \DOMDocument
      */
-    public function getDoc(): DOMDocument
+    public function getDoc(): \DOMDocument
     {
         return $this->soapDoc;
     }

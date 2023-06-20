@@ -90,7 +90,7 @@ class Helper
      *
      * @return array<mixed>
      */
-    public static function getPropertyAsArray(stdClass $oObject, string $sPropertyName): array
+    public static function getPropertyAsArray(\stdClass $oObject, string $sPropertyName): array
     {
         if (!property_exists($oObject, $sPropertyName)) {
             throw new Exception\NotFound(sprintf('%s() Property [%s] not exist in object', __METHOD__, $sPropertyName));
@@ -115,7 +115,7 @@ class Helper
      *
      * @return mixed
      */
-    public static function getPropertyAsObject(stdClass $oObject, string $sPropertyName)
+    public static function getPropertyAsObject(\stdClass $oObject, string $sPropertyName)
     {
         if (!property_exists($oObject, $sPropertyName)) {
             throw new Exception\NotFound(sprintf('%s() Property [%s] not exist in object', __METHOD__, $sPropertyName));
@@ -136,7 +136,7 @@ class Helper
      */
     public static function handleException(\Exception $e)
     {
-        if ($e instanceof SoapFault) {
+        if ($e instanceof \SoapFault) {
             switch ($e->faultcode ?? null) {
                 case 'a:InvalidSecurityToken':
                     return new Connection(sprintf('Invalid Security Token'), 1, $e);
@@ -167,13 +167,13 @@ class Helper
      *
      * @return \SplFileObject
      */
-    public static function saveFile(string $sPath, string $content): SplFileObject
+    public static function saveFile(string $sPath, string $content): \SplFileObject
     {
         if (!file_exists($sPath) || (md5_file($sPath) !== md5($content))) {
-            $oFile = new SplFileObject($sPath, 'w+');
+            $oFile = new \SplFileObject($sPath, 'w+');
             $oFile->fwrite($content);
         }
 
-        return new SplFileObject($sPath);
+        return new \SplFileObject($sPath);
     }
 }

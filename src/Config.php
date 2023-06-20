@@ -96,7 +96,7 @@ class Config extends ConfigurationOptionsAbstract
     {
         try {
             if (!array_key_exists('DataStanu', $args) && $addDate) {
-                $args['DataStanu'] = (new DateTime())->format('Y-m-d');
+                $args['DataStanu'] = (new \DateTime())->format('Y-m-d');
             }
             $self = $this;
             $this->getLogger()->debug(sprintf('REQ: %s', $method), $args);
