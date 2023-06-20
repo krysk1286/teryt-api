@@ -1,6 +1,7 @@
 {
   "name": "krysk1286/teryt-api",
   "description": "Teryt WS1 Api",
+  "version": "1.0.0",
   "keywords": [
     "teryt",
     "address",
