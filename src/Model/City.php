@@ -83,7 +83,7 @@ class City extends EntityAbstract
             $this->name     = $oCity->cityName;
             $this->rmId     = $oCity->rmId;
             $this->rmName   = $oCity->rmName;
-            $this->commune  = (new Commune())->find((string)($oCity->tercId));
+            $this->commune  = (new Commune())->find((string)$oCity->tercId);
         }
 
         if (!$this->id) {

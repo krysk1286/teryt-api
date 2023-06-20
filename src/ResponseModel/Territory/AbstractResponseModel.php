@@ -131,7 +131,7 @@ abstract class AbstractResponseModel
      */
     public function clearData(): self
     {
-        //clearing data
+        // clearing data
         foreach (get_object_vars($this) as $prop => $value) {
             if ('' === $value) {
                 $this->{$prop} = null;
