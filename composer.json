@@ -22,10 +22,10 @@
     "php": ">=7.2",
     "ext-soap": "*",
     "ext-dom": "*",
-    "mrcnpdlk/lib-exception": "^0",
-    "mrcnpdlk/lib-configuration": "^0",
+    "mrcnpdlk/lib-exception": "*",
+    "mrcnpdlk/lib-configuration": "*",
     "robrichards/wse-php": "^2",
-    "mrcnpdlk/psr16cache-adapter": "^0"
+    "mrcnpdlk/psr16cache-adapter": "*"
   },
   "require-dev": {
     "phpunit/php-code-coverage": "^10",
